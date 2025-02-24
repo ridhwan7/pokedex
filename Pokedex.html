@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=gi, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="Pokedex.css"></head>
+    <link rel="stylesheet" href="Pokedex.css">
+<Script src="Pokedex.js"></Script></head>
 <body>
    <div class="main">
     <div class="nameDisplay">
@@ -13,18 +14,20 @@
         <h3 id="PokemonName">Pokemon Name</h3>
         <img src="Pokemon-Ball-PNG-Photos.png" width="30px" height="30px">
     </div>
+  <div class="Imagedisplay">
+    <img id="sprite" >
 
-    <img class="Imagedisplay" >
+</div>
     <div class="Desc">
     <ul style="margin-bottom: 0;" ><br>
     <Li  id="PokemonType">Type:</Li>
     <Li id="PokemonSpecies">Species:</Li>
-    <Li id="Habitat">Habitat:</Li>
-    <Li id="Abilities">Abilities:</Li>
+    <Li id="Height">Habitat:</Li>
+    <Li id="Ability">Abilities:</Li>
     <Li id="Growthrate">Growth:</Li>  
     </ul>
      <div style="height: 180px; width: 300px; overflow-y: auto; margin-left:20px; margin-top:0px">
-        <p style="color: azure;">
+        <p style="color: azure;" id="desc">
 
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Adipisci harum natus quos pariatur, nemo ullam assumenda 
@@ -48,5 +51,11 @@
     </div>
 
    </div> 
+
+   <button onclick="generateRandom" id="change">sffsf</button>
+
+   <form>
+    Quantity: <input type="number" id="cnt" min="0" >
+  </form>
 </body>
 </html>
