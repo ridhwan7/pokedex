@@ -1,15 +1,33 @@
 const PokemonCount = 151;
 var pokedex = {} //{11:{"name":"bulasabar","img":url }}
-var rand=6;
+var rand=1;
+
+const btn= document.getElementById("change");
+console.log(btn.conten);
 
 
-window.addEventListener("click",getpokemon(rand));
 
- window.onclick = async function name(params) {
-    rand=document.getElementById("cnt").value;
-    getpokemon(rand)
+ window.onload = async function name(params) {
+    
+    getpokemon(rand);
  }
+function changes(){
 
+    rand=document.getElementById("cnt").value;
+
+    if(rand<1){
+        rand=1;
+        document.getElementById("cnt").value=1;
+    }
+    if(rand>151){
+        rand=151;
+        document.getElementById("cnt").value=151;
+    }
+    console.log(rand);
+}
+
+
+ 
 async function getpokemon(num){
     
     
@@ -26,17 +44,17 @@ async function getpokemon(num){
      let spec = pokemon["species"]["name"];
      let height = pokemon["height"];
      let ability = pokemon["abilities"]["0"]["ability"]["name"];
-     
+     let weight = pokemon["weight"];
      
      pokemondesc =pokemondesc["flavor_text_entries"][9]["flavor_text"];
      document.getElementById("sprite").src=imgstr;
-    document.getElementById("PokemonName").innerText=pokemonname;
+    document.getElementById("PokemonName").innerText=pokemonname.toUpperCase();
     document.getElementById("PokemonType").innerText="Type: "+type;
     document.getElementById("PokemonSpecies").innerText="Species: "+spec;
     document.getElementById("Height").innerText="Height: "+height;
     document.getElementById("Ability").innerText="Ability: "+ability;
+    document.getElementById("Weight").innerText="Weight: "+weight;
 
     document.getElementById("desc").innerText=pokemondesc;
     console.log(pokemon);
 }
-
